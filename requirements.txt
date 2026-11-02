@@ -1,3 +1,5 @@
+python-telegram-bot
+Flask
 aiofiles==25.1.0
 aiogram==3.31.0
 aiohappyeyeballs==2.7.1
