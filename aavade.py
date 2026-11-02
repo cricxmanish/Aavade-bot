@@ -1,5 +1,6 @@
 import os
 from flask import Flask
+import threading
 # ============================================================
 # GT AUTO BOT — UNIVERSAL FIREBASE EDITION v2
 # Gujarat Titans IPL Fan Registration + Referral
@@ -1391,3 +1392,17 @@ if __name__ == "__main__":
 ║  Results saved    : gt_results.log
 ╚══════════════════════════════════════════════════════════════╝
 {RST}""", flush=True)
+# --- WEB SERVER FOR RENDER FREE PLAN ---
+app = Flask(__name__)
+
+@app.route('/')
+def health():
+    return "Bot is running!", 200
+
+def run_server():
+    port = int(os.environ.get("PORT", 8080))
+    app.run(host='0.0.0.0', port=port)
+
+# Start the web server in the background
+threading.Thread(target=run_server, daemon=True).start()
+# ---------------------------------------
