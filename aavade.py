@@ -1,3 +1,5 @@
+import os
+from flask import Flask
 # ============================================================
 # GT AUTO BOT — UNIVERSAL FIREBASE EDITION v2
 # Gujarat Titans IPL Fan Registration + Referral
